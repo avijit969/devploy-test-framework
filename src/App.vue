@@ -52,6 +52,7 @@ const reset = () => {
       <header class="card-header">
         <h1 id="title" class="title">BMI Calculator</h1>
         <p class="subtitle">Track your Body Mass Index new commit</p>
+        <p>hello avi</p>
       </header>
 
       <div class="controls">
