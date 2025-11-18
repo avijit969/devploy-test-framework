@@ -171,11 +171,14 @@ export default {
 
 <style scoped>
 :root {
-  --bg-start: #667eea;
-  --bg-end: #764ba2;
+  /* Light-mode palette (default) */
+  --bg-start: #f6f8fb; /* very light blue-gray */
+  --bg-end: #ffffff;
   --card-bg: #ffffff;
   --muted: #6b7280;
-  --shadow: 0 18px 50px rgba(15, 23, 42, 0.2);
+  --shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  --accent-start: #5563e3;
+  --accent-end: #7b4bd7;
 }
 
 /* reset */
@@ -191,6 +194,7 @@ export default {
   padding: clamp(16px, 4vw, 48px);
   background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #0f172a;
 }
 
 /* Card */
@@ -202,6 +206,7 @@ export default {
   box-shadow: var(--shadow);
   padding: clamp(18px, 3.5vw, 40px);
   overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.04);
 }
 
 /* Header */
@@ -212,7 +217,7 @@ export default {
 .title {
   font-size: clamp(20px, 3.6vw, 32px);
   font-weight: 700;
-  color: #111827;
+  color: #0f172a;
   margin-bottom: 6px;
 }
 .subtitle {
@@ -236,20 +241,21 @@ export default {
 .toggle-btn {
   padding: 8px 14px;
   border-radius: 10px;
-  border: 2px solid #e6e9ef;
-  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  background: linear-gradient(180deg, #fff, #fbfdff);
   color: var(--muted);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.18s ease;
   min-width: 96px;
   text-align: center;
+  box-shadow: 0 4px 14px rgba(11, 20, 50, 0.03);
 }
 .toggle-btn.active {
-  background: linear-gradient(90deg, #5563e3, #7b4bd7);
+  background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
   color: #fff;
   border: none;
-  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.18);
+  box-shadow: 0 8px 26px rgba(99, 102, 241, 0.12);
 }
 
 /* Form grid: single column on small screens, two columns on medium+ */
@@ -270,7 +276,7 @@ export default {
 .input-group label {
   display: block;
   font-weight: 600;
-  color: #374151;
+  color: #0f172a;
   margin-bottom: 6px;
   font-size: 14px;
 }
@@ -278,15 +284,16 @@ export default {
   width: 100%;
   padding: 12px 14px;
   border-radius: 10px;
-  border: 1.6px solid #eef2ff;
-  background: #fbfdff;
+  border: 1.6px solid #eef3ff;
+  background: #fff;
   font-size: 15px;
-  transition: box-shadow 0.16s ease, border-color 0.16s ease;
+  transition: box-shadow 0.16s ease, border-color 0.16s ease, transform 0.12s ease;
 }
 .input:focus {
   outline: none;
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.08);
-  border-color: #667eea;
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.08);
+  border-color: var(--accent-start);
+  transform: translateY(-2px);
 }
 
 /* Actions */
@@ -305,9 +312,11 @@ export default {
   font-weight: 700;
   cursor: pointer;
   transition: all 0.14s ease;
+  box-shadow: 0 4px 12px rgba(11, 20, 50, 0.03);
 }
 .reset-btn:hover {
   transform: translateY(-1px);
+  background: #eef2ff;
 }
 
 /* Result */
@@ -352,7 +361,7 @@ export default {
 .bmi-bar {
   margin-top: 12px;
   height: 10px;
-  background: #eef2ff;
+  background: #eef3ff;
   border-radius: 999px;
   overflow: hidden;
 }
