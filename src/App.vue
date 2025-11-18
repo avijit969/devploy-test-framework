@@ -1,4 +1,7 @@
-<script setup lang="ts">
+<script
+  setup
+  lang="ts"
+>
 import { ref, computed } from "vue";
 
 const height = ref<number | null>(null);
@@ -51,9 +54,7 @@ const reset = () => {
     <div class="card" role="main" aria-labelledby="title">
       <header class="card-header">
         <h1 id="title" class="title">BMI Calculator</h1>
-        <p class="subtitle">Track your Body Mass Index new commit</p>
-        <p>hello avi</p>
-        <p>test</p>
+        <p class="subtitle">Track your Body Mass Index</p>
       </header>
 
       <div class="controls">
